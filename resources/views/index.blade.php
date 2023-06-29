@@ -248,7 +248,7 @@
             </div>
 
             {{-- This page will only show 2 projects --}}
-            <div class="flex flex-row justify-center">
+            <div class="flex flex-row justify-center mt-4">
                 <a href="{{ route('projects.index') }}"
                     class="bg-primary-button text-text px-4 py-2 mt-4 mx-auto rounded-md text-sm font-medium">View
                     All Projects</a>

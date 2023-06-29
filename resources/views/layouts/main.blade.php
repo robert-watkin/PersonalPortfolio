@@ -26,6 +26,7 @@
     @yield('content')
 
     {{-- Footer Component --}}
+    <livewire:footer />
 </body>
 
 </html>
