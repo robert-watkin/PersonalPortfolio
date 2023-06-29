@@ -230,7 +230,7 @@
                     <p class="my-4 text-text">{{ $project->short_description }}</p>
 
                     <div class="flex flex-row justify-between">
-                        <a href="#"
+                        <a href="{{ route('projects.show', $project->id) }}"
                             class="bg-primary-button text-text px-4 py-2 mt-2  rounded-md text-sm font-medium">View</a>
 
                         <ul class="flex flex-row space-x-2">
