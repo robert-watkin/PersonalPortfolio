@@ -16,14 +16,16 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
-<body class="bg-background">
+<body class="flex flex-col min-h-screen bg-background">
     {{-- Navbar Component --}}
     <livewire:navbar />
 
     {{-- Hero Component --}}
 
     {{-- Blurb/About with link to contact page --}}
-    @yield('content')
+    <main class="flex-grow">
+        @yield('content')
+    </main>
 
     {{-- Footer Component --}}
     <livewire:footer />

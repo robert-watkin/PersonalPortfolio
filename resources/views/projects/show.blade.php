@@ -3,7 +3,7 @@
 @section('title', "{{ $project->title }}")
 
 @section('content')
-<main class="px-4">
+<div class="px-4">
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div class="mt-10">
             <h2 class="text-2xl font-bold mb-4 text-text">{{ $project->title }}</h2>
@@ -42,5 +42,5 @@
         </div>
 
     </section>
-</main>
+</div>
 @stop

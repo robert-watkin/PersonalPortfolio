@@ -3,7 +3,7 @@
 @section('title', "Robert Watkin's Portfolio")
 
 @section('content')
-<main class="px-4">
+<div class="px-4">
     <section class="max-w-6xl mx-auto">
         <div class="grid grid-cols-3 my-24">
             <div class="col-span-2 mr-4">
@@ -256,5 +256,5 @@
         </div>
 
     </section>
-</main>
+</div>
 @stop
