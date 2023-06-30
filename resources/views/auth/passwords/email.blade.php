@@ -13,24 +13,35 @@
                     <div class="flex flex-col mb-4">
                         <label for="email" class="text-text">{{ __('Email Address') }}</label>
 
-                        <input id="email" type="email" class="w-full px-3 py-2 border @error('email') border-red-500 @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                        <input id="email" type="email"
+                            class="w-full px-3 py-2 border @error('email') border-red-500 @enderror" name="email"
+                            value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                         @error('email')
-                            <span class="text-red-500" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                        <span class="text-red-500" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
                         @enderror
+
+                        @if (session('status'))
+                        <div class="alert alert-success ">
+                            <p class="text-text">
+                                {{ session('status') }}
+                            </p>
+                        </div>
+                        @endif
                     </div>
 
                     <div class="flex justify-between items-center">
-                        <button type="submit" class="bg-primary-button text-text px-4 py-2 rounded-md text-sm font-medium">
+                        <button type="submit"
+                            class="bg-primary-button text-text px-4 py-2 rounded-md text-sm font-medium">
                             {{ __('Send Password Reset Link') }}
                         </button>
 
                         @if (Route::has('login'))
-                            <a class="text-accent text-sm font-medium" href="{{ route('login') }}">
-                                {{ __('Back to Login') }}
-                            </a>
+                        <a class="text-accent text-sm font-medium" href="{{ route('login') }}">
+                            {{ __('Back to Login') }}
+                        </a>
                         @endif
                     </div>
                 </form>
