@@ -7,8 +7,22 @@ use App\Models\Project;
 
 class HomeController extends Controller
 {
-    //
-    public function Index()
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+       
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
     {
         return view('index', [
             'projects' => Project::limit(2)->get()

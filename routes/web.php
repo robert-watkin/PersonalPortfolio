@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjectController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +19,6 @@ use App\Http\Controllers\ProjectController;
 Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')->name('index');
 });
+
 Route::resource('projects', ProjectController::class);
+Auth::routes(['register' => false]);

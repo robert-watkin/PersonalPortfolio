@@ -1,18 +1,36 @@
-<nav class="bg-background"  x-data="{ open: false }">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" >
-    <div class="flex items-center justify-between h-16">
-      <div class="flex items-center">
-        <div class="flex-shrink-0">
-          <a href="#" class="text-text">
-            Robert Watkin
-          </a>
-        </div>
-        <div class="hidden md:block">
-          <div class="ml-10 flex items-baseline space-x-4">
-            <a href="{{ route('index') }}" class="text-text hover:text-gray-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
-            <a href="{{ route('projects.index') }}" class="text-text hover:text-gray-600 px-3 py-2 rounded-md text-sm font-medium">Projects</a>
-            <a href="#" class="text-text hover:text-gray-600 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+<nav class="bg-background" x-data="{ open: false }">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 w-full">
+      <div class="flex items-center justify-between w-full">
+        <div class="flex items-center">
+          <div class="flex-shrink-0">
+            <a href="#" class="text-text">
+              Robert Watkin
+            </a>
           </div>
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-4">
+              <a href="{{ route('index') }}"
+                class="text-text hover:text-gray-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+              <a href="{{ route('projects.index') }}"
+                class="text-text hover:text-gray-600 px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+              <a href="#" class="text-text hover:text-gray-600 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+            </div>
+          </div>
+        </div>
+        <div>
+          @if(!Auth::check())
+          <!-- Show 'Admin Login' button if user is not authenticated -->
+          <a href="{{ route('login') }}" class="bg-primary-button text-text px-4 py-2 rounded-md text-sm font-medium">{{
+            __('Admin Login') }}</a>
+          @else
+          <!-- Show 'Logout' button if user is authenticated -->
+          <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <button type="submit" class="bg-primary-button text-text px-4 py-2 rounded-md text-sm font-medium">{{
+              __('Logout') }}</button>
+          </form>
+          @endif
         </div>
       </div>
       <div class="-mr-2 flex md:hidden">
@@ -29,7 +47,8 @@
             -->
           <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
             stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+            </path>
           </svg>
           <!-- Icon when menu is open. -->
           <!--
@@ -48,8 +67,10 @@
   <!-- Mobile menu, show/hide based on menu state. -->
   <div class="md:hidden" id="mobile-menu" x-show="open" @click.outside="open = false">
     <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-      <a href="{{ route('index') }}" class="text-text hover:text-gray-600 block px-3 py-2 rounded-md text-base font-medium">Home</a>
-      <a href="{{ route('projects.index') }}" class="text-text hover:text-gray-600 block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+      <a href="{{ route('index') }}"
+        class="text-text hover:text-gray-600 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+      <a href="{{ route('projects.index') }}"
+        class="text-text hover:text-gray-600 block px-3 py-2 rounded-md text-base font-medium">Projects</a>
       <a href="#" class="text-text hover:text-gray-600 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
     </div>
   </div>

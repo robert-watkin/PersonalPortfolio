@@ -202,23 +202,6 @@
 
         {{-- TODO add linkedin and github pages --}}
 
-        {{-- <div class="mt-10">
-            <h2 class="text-2xl font-bold mb-4 text-text">Skills</h2>
-            <ul class="grid grid-cols-4 gap-2">
-                <li class="py-2 px-4 text-text rounded">PHP/Laravel</li>
-                <li class="py-2 px-4 text-text rounded">HTML</li>
-                <li class="py-2 px-4 text-text rounded">CSS</li>
-                <li class="py-2 px-4 text-text rounded">Livewire</li>
-                <li class="py-2 px-4 text-text rounded">Javascript</li>
-                <li class="py-2 px-4 text-text rounded">C</li>
-                <li class="py-2 px-4 text-text rounded">Java</li>
-                <li class="py-2 px-4 text-text rounded">Unix</li>
-                <li class="py-2 px-4 text-text rounded">Git</li>
-                <li class="py-2 px-4 text-text rounded">Agile Methodologies</li>
-            </ul>
-        </div> --}}
-
-
 
         <div class="my-48">
             <h2 class="text-2xl font-bold mb-4 text-text">Projects</h2>
