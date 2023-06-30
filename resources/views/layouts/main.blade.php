@@ -29,6 +29,8 @@
 
     {{-- Footer Component --}}
     <livewire:footer />
+
+    @yield('scripts')
 </body>
 
 </html>

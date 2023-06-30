@@ -5,6 +5,13 @@
 @section('content')
 <div class="px-4">
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {{-- if auth show button to edit page --}}
+        @if(Auth::check())
+        <div class="flex justify-end">
+            <a href="{{ route('projects.edit', $project->id) }}"
+                class="bg-primary-button text-text px-4 py-2 mt-2  rounded-md text-sm font-medium">Edit</a>
+        </div>
+        @endif
         <div class="mt-10">
             <h2 class="text-2xl font-bold mb-4 text-text">{{ $project->title }}</h2>
 
@@ -37,7 +44,9 @@
                 </ul>
             </div>
 
-            <div>{{ $project->description }}</div>
+            <div>
+                {!! $project->description !!}
+            </div>
 
         </div>
 

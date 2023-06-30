@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('short_description')->nullable();
-            $table->mediumText('description')->nullable();
+            $table->mediumText('short_description')->nullable();
+            $table->longText('description')->nullable();
             $table->string('technologies')->nullable();
             // github and live site links
             $table->string('github')->nullable();
