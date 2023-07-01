@@ -28,9 +28,9 @@
                     SQL • Unix • Git • Agile Methodologies</p>
                 {{-- Primary and secondary buttons to view projects and to contact --}}
                 <div class="md:col-span-4 flex justify-center mt-4 md:justify-start">
-                    <a href="#" class="bg-primary-button text-text px-4 py-2 rounded-md text-sm font-medium">View
+                    <a href="{{ route('projects.index') }}" class="bg-primary-button text-text px-4 py-2 rounded-md text-sm font-medium">View
                         Projects</a>
-                    <a href="#"
+                    <a href="{{ route('contact.show') }}"
                         class="bg-secondary-button text-text px-4 py-2 rounded-md text-sm font-medium ml-4">Contact
                         Me</a>
                 </div>
