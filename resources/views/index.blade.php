@@ -207,10 +207,10 @@
             <h2 class="text-2xl font-bold mb-4 text-text">Projects</h2>
             <div class="grid grid-cols-2 gap-2">
                 @foreach($projects as $project)
-                <div class="py-4 px-6 bg-secondary-button text-text rounded">
+                <div class="flex flex-col justify-between py-4 px-6 bg-secondary-button text-text rounded">
                     <p class="font-bold text-xl text-text">{{ $project->title }}</p>
 
-                    <p class="my-4 text-text">{{ $project->short_description }}</p>
+                    <p class="my-4 text-text line-clamp-3">{{ $project->short_description }}</p>
 
                     <div class="flex flex-row justify-between">
                         <a href="{{ route('projects.show', $project->id) }}"
@@ -221,7 +221,7 @@
                             @foreach(explode(',', $project->technologies) as $technology)
                             @php $count++; @endphp
                             @if($count > 3) @break @endif
-                            <li class="bg-background rounded-full px-2 py-1 my-auto w-auto text-sm text-text">
+                            <li class="bg-accent rounded-full px-2 py-1 my-auto w-auto text-sm text-text">
                                 {{$technology}}</li>
                             @endforeach
                         </ul>

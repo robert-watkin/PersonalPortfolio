@@ -14,7 +14,7 @@
                 class="text-text hover:text-gray-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
               <a href="{{ route('projects.index') }}"
                 class="text-text hover:text-gray-600 px-3 py-2 rounded-md text-sm font-medium">Projects</a>
-              <a href="#" class="text-text hover:text-gray-600 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+              <a href="{{ route('contact.show') }}" class="text-text hover:text-gray-600 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
             </div>
           </div>
         </div>
