@@ -1,15 +1,25 @@
 @extends('layouts.main')
 
-@section('title', "{{ $project->title }}")
+@section('title', $project->title)
 
 @section('content')
 <div class="px-4">
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {{-- if auth show button to edit page --}}
+        {{-- if auth --}}
         @if(Auth::check())
+        {{-- button to edit the project --}}
         <div class="flex justify-end">
             <a href="{{ route('projects.edit', $project->id) }}"
                 class="bg-primary-button text-text px-4 py-2 mt-2  rounded-md text-sm font-medium">Edit</a>
+        </div>
+        {{-- button to delete the project --}}
+        <div class="flex justify-end">
+            <form method="POST" action="{{ route('projects.destroy', $project->id) }}">
+                @csrf
+                @method('DELETE')
+                <button type="submit"
+                    class="bg-secondary-button text-text px-4 py-2 mt-2  rounded-md text-sm font-medium">Delete</button>
+            </form>
         </div>
         @endif
         <div class="mt-10">

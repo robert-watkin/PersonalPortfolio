@@ -134,6 +134,11 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        //
+        // destroy the model if it exists
+        $project = Project::find($project->id);
+
+        if ($project) {
+            $project->delete();
+        }
     }
 }
