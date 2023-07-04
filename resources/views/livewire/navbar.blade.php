@@ -14,7 +14,8 @@
                 class="text-text hover:text-gray-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
               <a href="{{ route('projects.index') }}"
                 class="text-text hover:text-gray-600 px-3 py-2 rounded-md text-sm font-medium">Projects</a>
-              <a href="{{ route('contact.show') }}" class="text-text hover:text-gray-600 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+              <a href="{{ route('contact.show') }}"
+                class="text-text hover:text-gray-600 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
             </div>
           </div>
         </div>
@@ -73,25 +74,33 @@
     </div>
   </div>
   <!-- Mobile menu, show/hide based on menu state. -->
-  <div class="md:hidden" id="mobile-menu" x-show="open" @click.outside="open = false">
+  <div class="md:hidden shadow-md" id="mobile-menu" x-show="open" @click.outside="open = false">
     <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
       <a href="{{ route('index') }}"
         class="text-text hover:text-gray-600 block px-3 py-2 rounded-md text-base font-medium">Home</a>
       <a href="{{ route('projects.index') }}"
         class="text-text hover:text-gray-600 block px-3 py-2 rounded-md text-base font-medium">Projects</a>
-      <a href="#" class="text-text hover:text-gray-600 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
-      @if(!Auth::check())
-      <!-- Show 'Admin Login' button if user is not authenticated -->
-      <a href="{{ route('login') }}" class="bg-primary-button text-text px-4 py-2 rounded-md text-sm font-medium">{{
-        __('Admin Login') }}</a>
-      @else
-      <!-- Show 'Logout' button if user is authenticated -->
-      <form method="POST" action="{{ route('logout') }}">
-        @csrf
-        <button type="submit" class="bg-primary-button text-text px-4 py-2 rounded-md text-sm font-medium">{{
-          __('Logout') }}</button>
-      </form>
-      @endif
+      <a href="{{ route('contact.show') }}"
+        class="text-text mb-4 hover:text-gray-600 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+
+      <div class="flex justify-center space-x-2">
+        @if(Auth::check())
+        <a href="{{ route('projects.create') }}"
+          class="bg-primary-button text-text px-4 py-2 rounded-md text-sm font-medium">Add Project</a>
+        @endif
+        @if(!Auth::check())
+        <!-- Show 'Admin Login' button if user is not authenticated -->
+        <a href="{{ route('login') }}" class="bg-primary-button text-text px-4 py-2 rounded-md text-sm font-medium">{{
+          __('Admin Login') }}</a>
+        @else
+        <!-- Show 'Logout' button if user is authenticated -->
+        <form method="POST" action="{{ route('logout') }}">
+          @csrf
+          <button type="submit" class="bg-primary-button text-text px-4 py-2 rounded-md text-sm font-medium">{{
+            __('Logout') }}</button>
+        </form>
+        @endif
+      </div>
     </div>
   </div>
 </nav>
