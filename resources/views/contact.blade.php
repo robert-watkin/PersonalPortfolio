@@ -37,13 +37,13 @@
                     </div>
 
                     <div class="flex flex-col mb-4">
-                        <label for="message" class="text-text">{{ __('Message') }}</label>
-                        <textarea id="message"
-                            class="w-full px-3 py-2 border @error('message') border-red-500 @enderror" name="message"
+                        <label for="email_message" class="text-text">{{ __('Message') }}</label>
+                        <textarea id="email_message"
+                            class="w-full px-3 py-2 border @error('email_message') border-red-500 @enderror" name="email_message"
                             required></textarea>
-                        @error('message')
-                        <span class="text-red-500" role="alert">
-                            <strong>{{ $message }}</strong>
+                        @if(session('success'))
+                        <span class="text-green-500" role="alert">
+                            <strong>{{ session('success') }}</strong>
                         </span>
                         @enderror
                     </div>
