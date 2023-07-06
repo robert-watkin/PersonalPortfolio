@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 h1 {
     @apply text-2xl font-bold text-text;
 }
@@ -20,7 +19,7 @@ h4 {
 }
 
 h5 {
-    @apply text-sm font-semibold text-text; 
+    @apply text-sm font-semibold text-text;
 }
 
 h6 {
@@ -31,11 +30,28 @@ p {
     @apply text-base text-text;
 }
 
-
 strong {
     @apply font-bold;
 }
 
 em {
     @apply italic;
+}
+
+.image-style-align-left {
+    float: left;
+    margin-right: 10px;
+    max-width: 50%;
+}
+
+.image-style-align-right {
+    float: right;
+    margin-left: 10px;
+    max-width: 50%;
+}
+
+.image-style-align-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -215,6 +215,13 @@
         .create( document.querySelector( '#description' ), {
             extraPlugins: [ SimpleUploadAdapterPlugin ],
 
+            // The configuration of the Styles drop-down list.
+            image: {
+                styles: [
+                    'alignLeft', 'alignCenter', 'alignRight'
+                ]
+            },
+
             // More configuration options.
             // ...
         })
