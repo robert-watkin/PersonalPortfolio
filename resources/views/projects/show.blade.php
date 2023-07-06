@@ -27,6 +27,14 @@
 
             <p>{{ $project->short_description }}</p>
 
+            <p class=" text-accent text-xs font-bold">
+                @php $first = true @endphp
+                @foreach(explode(',', $project->technologies) as $technology)
+                @if(!$first) • @endif {{$technology}}
+                @if($first) @php $first = false @endphp @endif
+                @endforeach 
+            </p>
+
             <div class="flex flex-row space-x-4 my-4 py-2 h-14">
                 @if($project->github != null && $project->github != "")
                 <a href="{{ $project->github }}" target=”_blank”>
@@ -44,14 +52,6 @@
                     </svg>
                 </a>
                 @endif
-
-
-                <ul class="flex flex-row space-x-2">
-                    @foreach(explode(',', $project->technologies) as $technology)
-                    <li class="bg-accent rounded-full px-2 py-1 my-auto w-auto text-sm text-text">
-                        {{$technology}}</li>
-                    @endforeach
-                </ul>
             </div>
 
             <div>

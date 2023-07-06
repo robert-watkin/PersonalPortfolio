@@ -11,7 +11,8 @@
                     <div class="w-1/2 md:w-1/6 my-4 md:my-4">
                         <img src="{{ asset('images/profile.jpg') }}" alt="Profile Image" class="mx-auto rounded-full">
                     </div>
-                    <h1 class="text-4xl my-auto font-bold text-text ">Robert Watkin<span class="text-accent text-2xl -mt-2"><br />Full-Stack Engineer</span></h1>
+                    <h1 class="text-4xl my-auto font-bold text-text ">Robert Watkin<span
+                            class="text-accent text-2xl -mt-2"><br />Full-Stack Engineer</span></h1>
                 </div>
                 <p class="mt-4 text-sm text-text">Hello! I'm Robert Watkin, a junior software engineer from the North
                     East of England. Since my early teens, I found myself drawn to web development. Nowadays, I
@@ -27,7 +28,8 @@
                     SQL • Unix • Git • Agile Methodologies</p>
                 {{-- Primary and secondary buttons to view projects and to contact --}}
                 <div class="md:col-span-4 flex justify-center mt-4 md:justify-start">
-                    <a href="{{ route('projects.index') }}" class="bg-primary-button text-text px-4 py-2 rounded-md text-sm font-medium">View
+                    <a href="{{ route('projects.index') }}"
+                        class="bg-primary-button text-text px-4 py-2 rounded-md text-sm font-medium">View
                         Projects</a>
                     <a href="{{ route('contact.show') }}"
                         class="bg-secondary-button text-text px-4 py-2 rounded-md text-sm font-medium ml-4">Contact
@@ -206,26 +208,7 @@
             <h2 class="text-2xl font-bold mb-4 text-text">Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
                 @foreach($projects as $project)
-                <div class="flex flex-col justify-between my-2 py-4 px-6 bg-secondary-button text-text rounded">
-                    <p class="font-bold text-xl text-text">{{ $project->title }}</p>
-
-                    <p class="my-4 text-text line-clamp-5 md:line-clamp-3">{{ $project->short_description }}</p>
-
-                    <div class="flex flex-row justify-between">
-                        <a href="{{ route('projects.show', $project->id) }}"
-                            class="bg-primary-button text-text px-4 py-2 mt-2  rounded-md text-sm font-medium">View</a>
-
-                        <ul class="flex flex-row space-x-2">
-                            @php $count = 0; @endphp
-                            @foreach(explode(',', $project->technologies) as $technology)
-                            @php $count++; @endphp
-                            @if($count > 3) @break @endif
-                            <li class="bg-accent rounded-full px-2 py-1 my-auto w-auto text-sm text-text">
-                                {{$technology}}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
+                <livewire:project-card :project="$project" :key="$project->id" />
                 @endforeach
             </div>
 
