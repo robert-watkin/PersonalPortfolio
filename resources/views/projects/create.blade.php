@@ -215,12 +215,34 @@
         .create( document.querySelector( '#description' ), {
             extraPlugins: [ SimpleUploadAdapterPlugin ],
 
-            // The configuration of the Styles drop-down list.
+            // Image alignment options
             image: {
-                styles: [
-                    'alignLeft', 'alignCenter', 'alignRight'
-                ]
+                toolbar: ['imageTextAlternative', '|', 'imageStyle:alignLeft', 'imageStyle:alignRight', 'imageStyle:alignCenter'],
+                styles: {
+                    alignLeft: {
+                        name: 'Align Left',
+                        attributes: {
+                            align: 'left',
+                        },
+                    },
+                    alignRight: {
+                        name: 'Align Right',
+                        attributes: {
+                            align: 'right',
+                        },
+                    },
+                    alignCenter: {
+                        name: 'Align Center',
+                        attributes: {
+                            align: 'center',
+                        },
+                    },
+                },
             },
+            coreContentStyle: {
+                'img': 'align',
+            },
+
 
             // More configuration options.
             // ...
