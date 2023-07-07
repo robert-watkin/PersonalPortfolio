@@ -50,7 +50,7 @@
 
                     <div class="flex justify-between items-center">
                         <button type="submit"
-                                class="bg-primary-button text-text px-4 py-2 rounded-md text-sm font-medium">
+                                class="bg-primary-button text-text px-4 py-2 rounded-md text-sm font-medium  cursor-pointer hover:scale-110">
                             {{ __('Reset Password') }}
                         </button>
 

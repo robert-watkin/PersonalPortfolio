@@ -29,10 +29,10 @@
                 {{-- Primary and secondary buttons to view projects and to contact --}}
                 <div class="md:col-span-4 flex justify-center mt-4 md:justify-start">
                     <a href="{{ route('projects.index') }}"
-                        class="bg-primary-button text-text px-4 py-2 rounded-md text-sm font-medium">View
+                        class="bg-primary-button text-text px-4 py-2 rounded-md text-sm font-medium  cursor-pointer hover:scale-110">View
                         Projects</a>
                     <a href="{{ route('contact.show') }}"
-                        class="bg-secondary-button text-text px-4 py-2 rounded-md text-sm font-medium ml-4">Contact
+                        class="bg-secondary-button text-text px-4 py-2 rounded-md text-sm font-medium ml-4  cursor-pointer hover:scale-110">Contact
                         Me</a>
                 </div>
             </div>
@@ -215,7 +215,7 @@
             {{-- This page will only show 2 projects --}}
             <div class="flex flex-row justify-center mt-4">
                 <a href="{{ route('projects.index') }}"
-                    class="bg-primary-button text-text px-4 py-2 mt-4 mx-auto rounded-md text-sm font-medium">View
+                    class="bg-primary-button text-text px-4 py-2 mt-4 mx-auto rounded-md text-sm font-medium  cursor-pointer hover:scale-110">View
                     All Projects</a>
             </div>
         </div>

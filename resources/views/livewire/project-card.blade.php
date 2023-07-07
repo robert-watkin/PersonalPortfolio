@@ -14,6 +14,6 @@
 
     <div class="flex flex-row justify-between">
         <a href="{{ route('projects.show', $project->id) }}"
-            class="bg-primary-button text-text px-4 py-2 mt-2  rounded-md text-sm font-medium">View</a>
+            class="bg-primary-button text-text px-4 py-2 mt-2  rounded-md text-sm font-medium  cursor-pointer hover:scale-110">View</a>
     </div>
 </div>

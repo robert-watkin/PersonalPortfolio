@@ -23,19 +23,19 @@
           <div class="flex flex-row space-x-4">
             @if(Auth::check())
             <a href="{{ route('projects.create') }}"
-              class="bg-primary-button text-text px-4 py-2 rounded-md text-sm font-medium">Add Project</a>
+              class="bg-primary-button text-text px-4 py-2 rounded-md text-sm font-medium  cursor-pointer hover:scale-110">Add Project</a>
             @endif
 
             @if(!Auth::check())
             <!-- Show 'Admin Login' button if user is not authenticated -->
             <a href="{{ route('login') }}"
-              class="bg-primary-button text-text px-4 py-2 rounded-md text-sm font-medium">{{
+              class="bg-primary-button text-text px-4 py-2 rounded-md text-sm font-medium  cursor-pointer hover:scale-110">{{
               __('Admin Login') }}</a>
             @else
             <!-- Show 'Logout' button if user is authenticated -->
             <form method="POST" action="{{ route('logout') }}">
               @csrf
-              <button type="submit" class="bg-primary-button text-text px-4 py-2 rounded-md text-sm font-medium">{{
+              <button type="submit" class="bg-primary-button text-text px-4 py-2 rounded-md text-sm font-medium  cursor-pointer hover:scale-110">{{
                 __('Logout') }}</button>
             </form>
             @endif
@@ -90,13 +90,13 @@
         @endif
         @if(!Auth::check())
         <!-- Show 'Admin Login' button if user is not authenticated -->
-        <a href="{{ route('login') }}" class="bg-primary-button text-text px-4 py-2 rounded-md text-sm font-medium">{{
+        <a href="{{ route('login') }}" class="bg-primary-button text-text px-4 py-2 rounded-md text-sm font-medium  cursor-pointer hover:scale-110">{{
           __('Admin Login') }}</a>
         @else
         <!-- Show 'Logout' button if user is authenticated -->
         <form method="POST" action="{{ route('logout') }}">
           @csrf
-          <button type="submit" class="bg-primary-button text-text px-4 py-2 rounded-md text-sm font-medium">{{
+          <button type="submit" class="bg-primary-button text-text px-4 py-2 rounded-md text-sm font-medium  cursor-pointer hover:scale-110">{{
             __('Logout') }}</button>
         </form>
         @endif
