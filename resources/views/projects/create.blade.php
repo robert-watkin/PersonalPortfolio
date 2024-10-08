@@ -90,7 +90,7 @@
 
                     <div class="flex justify-between items-center">
                         <button type="submit"
-                            class="bg-primary-button text-text px-4 py-2 rounded-md text-sm font-medium">
+                            class="bg-primary text-primary-content px-4 py-2 rounded-md text-sm font-medium">
                             {{ __('Create Project') }}
                         </button>
                     </div>

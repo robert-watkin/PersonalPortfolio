@@ -3,29 +3,25 @@
 @section('title', $project->title)
 
 @section('content')
-<div class="px-4">
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<div class="px-4 py-12">
+    <section class="max-w-7xl bg-gradient-to-b from-base-100 to-background from-0% to-90% rounded-lg mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {{-- if auth --}}
         @if(Auth::check())
-        {{-- button to edit the project --}}
-        <div class="flex justify-end">
+        <div class="flex flex-row space-x-2 justify-end">
             <a href="{{ route('projects.edit', $project->id) }}"
-                class="bg-primary-button text-text px-4 py-2 mt-2  rounded-md text-sm font-medium cursor-pointer hover:scale-110 ">Edit</a>
-        </div>
-        {{-- button to delete the project --}}
-        <div class="flex justify-end">
+                class="bg-primary text-primary-content px-4 py-2 mt-2  rounded-md text-sm font-medium cursor-pointer hover:scale-110 ">Edit</a>
             <form method="POST" action="{{ route('projects.destroy', $project->id) }}">
                 @csrf
                 @method('DELETE')
                 <button type="submit"
-                    class="bg-secondary-button text-text px-4 py-2 mt-2  rounded-md text-sm font-medium cursor-pointer hover:scale-110">Delete</button>
+                    class="bg-secondary text-text px-4 py-2 mt-2  rounded-md text-sm font-medium cursor-pointer hover:scale-110">Delete</button>
             </form>
         </div>
         @endif
-        <div class="mt-10">
+        <div>
             <h2 class="text-2xl font-bold mb-4 text-text">{{ $project->title }}</h2>
 
-            <p>{{ $project->short_description }}</p>
+            <p class="text-text">{{ $project->short_description }}</p>
 
             <p class=" text-accent text-xs font-bold">
                 @php $first = true @endphp
@@ -38,7 +34,7 @@
             <div class="flex flex-row space-x-4 my-4 py-2 h-14">
                 @if($project->github != null && $project->github != "")
                 <a href="{{ $project->github }}" target="_blank"
-                    class="bg-primary-button text-text px-4 py-2 mt-2 rounded-md text-sm font-medium flex items-center cursor-pointer hover:scale-110">
+                    class="bg-primary text-primary-content px-4 py-2 mt-2 rounded-md text-sm font-medium flex items-center cursor-pointer hover:scale-110">
                     <svg class="w-4 h-4 mr-2 text-[#000000] hover:text-accent transition-colors duration-200"
                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4 mr-2">
                         <path
@@ -51,7 +47,7 @@
 
                 @if($project->live_site != null && $project->live_site != "")
                 <a href="{{ $project->live_site }}" target="_blank"
-                    class="bg-primary-button text-text px-4 py-2 mt-2 rounded-md text-sm font-medium flex items-center cursor-pointer hover:scale-110">
+                    class="bg-primary text-primary-content px-4 py-2 mt-2 rounded-md text-sm font-medium flex items-center cursor-pointer hover:scale-110">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                         class="w-4 h-4 mr-2">
                         <path
@@ -70,7 +66,7 @@
 
             </div>
 
-            <div>
+            <div class="text-text">
                 {!! $project->description !!}
             </div>
 

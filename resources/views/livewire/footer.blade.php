@@ -28,6 +28,6 @@
 
     <!-- Copyright -->
     <div class="mt-4 text-center text-sm text-text">
-        &copy; 2023 Robert Watkin. All rights reserved.
+        &copy; {{ date('Y') }} Robert Watkin. All rights reserved.
     </div>
 </footer>

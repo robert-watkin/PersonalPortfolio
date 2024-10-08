@@ -1,10 +1,10 @@
-<nav class="bg-background" x-data="{ open: false }">
+<nav class="bg-gradient-to-r from-base-100 from-40% to-80% to-background" x-data="{ open: false }">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16 w-full">
       <div class="flex items-center justify-between w-full">
         <div class="flex items-center">
           <div class="flex-shrink-0">
-            <a href="#" class="text-text">
+            <a href="#" class="font-bold text-transparent bg-clip-text w-24 h-12 bg-gradient-to-r from-primary to-accent">
               Robert Watkin
             </a>
           </div>
@@ -23,19 +23,19 @@
           <div class="flex flex-row space-x-4">
             @if(Auth::check())
             <a href="{{ route('projects.create') }}"
-              class="bg-primary-button text-text px-4 py-2 rounded-md text-sm font-medium  cursor-pointer hover:scale-110">Add Project</a>
+              class="bg-primary text-primary-content px-4 py-2 rounded-md text-sm font-medium  cursor-pointer hover:scale-110">Add Project</a>
             @endif
 
             @if(!Auth::check())
             <!-- Show 'Admin Login' button if user is not authenticated -->
             <a href="{{ route('login') }}"
-              class="bg-primary-button text-text px-4 py-2 rounded-md text-sm font-medium  cursor-pointer hover:scale-110">{{
+              class="bg-primary text-primary-content px-4 py-2 rounded-md text-sm font-medium  cursor-pointer hover:scale-110">{{
               __('Admin Login') }}</a>
             @else
             <!-- Show 'Logout' button if user is authenticated -->
             <form method="POST" action="{{ route('logout') }}">
               @csrf
-              <button type="submit" class="bg-primary-button text-text px-4 py-2 rounded-md text-sm font-medium  cursor-pointer hover:scale-110">{{
+              <button type="submit" class="bg-secondary text-secondary-content px-4 py-2 rounded-md text-sm font-medium  cursor-pointer hover:scale-110">{{
                 __('Logout') }}</button>
             </form>
             @endif
@@ -86,17 +86,17 @@
       <div class="flex justify-center space-x-2">
         @if(Auth::check())
         <a href="{{ route('projects.create') }}"
-          class="bg-primary-button text-text px-4 py-2 rounded-md text-sm font-medium">Add Project</a>
+          class="bg-primary text-primary-content px-4 py-2 rounded-md text-sm font-medium">Add Project</a>
         @endif
         @if(!Auth::check())
         <!-- Show 'Admin Login' button if user is not authenticated -->
-        <a href="{{ route('login') }}" class="bg-primary-button text-text px-4 py-2 rounded-md text-sm font-medium  cursor-pointer hover:scale-110">{{
+        <a href="{{ route('login') }}" class="bg-primary text-primary-content px-4 py-2 rounded-md text-sm font-medium  cursor-pointer hover:scale-110">{{
           __('Admin Login') }}</a>
         @else
         <!-- Show 'Logout' button if user is authenticated -->
         <form method="POST" action="{{ route('logout') }}">
           @csrf
-          <button type="submit" class="bg-primary-button text-text px-4 py-2 rounded-md text-sm font-medium  cursor-pointer hover:scale-110">{{
+          <button type="submit" class="bg-primary text-primary-content px-4 py-2 rounded-md text-sm font-medium  cursor-pointer hover:scale-110">{{
             __('Logout') }}</button>
         </form>
         @endif

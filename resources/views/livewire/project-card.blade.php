@@ -1,4 +1,4 @@
-<div class="flex flex-col justify-between my-2 py-4 px-6 bg-secondary-button text-text rounded">
+<div class="flex flex-col justify-between my-2 py-4 px-6 bg-base-100 text-text rounded">
     <p class="font-bold text-xl text-text">{{ $project->title }}</p>
 
     <p class="my-4 text-text line-clamp-5 md:line-clamp-3">{{ $project->short_description }}</p>
@@ -14,6 +14,6 @@
 
     <div class="flex flex-row justify-between">
         <a href="{{ route('projects.show', $project->id) }}"
-            class="bg-primary-button text-text px-4 py-2 mt-2  rounded-md text-sm font-medium  cursor-pointer hover:scale-110">View</a>
+            class="bg-primary text-primary-content px-4 py-2 mt-2  rounded-md text-sm font-medium  cursor-pointer hover:scale-110">View</a>
     </div>
 </div>

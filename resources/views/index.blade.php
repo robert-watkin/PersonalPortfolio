@@ -6,15 +6,15 @@
 <div class="px-4">
     <section class="max-w-6xl mx-auto">
         <div class="grid grid-cols-3 my-12 md:my-24">
-            <div class="col-span-3 md:col-span-2 mr-4">
-                <div class="flex flex-col-reverse md:flex-row md:space-x-4">
-                    <div class="w-1/2 md:w-1/6 my-4 md:my-4">
-                        <img src="{{ asset('images/profile.jpg') }}" alt="Profile Image" class="mx-auto rounded-full">
+            <div class="col-span-3 mr-4">
+                <div class="flex flex-row justify-center space-x-4 mx-auto">
+                    <div class="my-4 md:my-4">
+                        <img src="{{ asset('images/profile.jpg') }}" alt="Profile Image" class="h-32 w-32 rounded-full">
                     </div>
                     <h1 class="text-4xl my-auto font-bold text-text ">Robert Watkin<span
                             class="text-accent text-2xl -mt-2"><br />Full-Stack Engineer</span></h1>
                 </div>
-                <p class="mt-4 text-sm text-text">Hello! I'm Robert Watkin, a junior software engineer from the North
+                <p class="mt-4 text-sm text-text text-center md:w-[640px] mx-auto  mb-5">Hello! I'm Robert Watkin, a junior software engineer from the North
                     East of England. Since my early teens, I found myself drawn to web development. Nowadays, I
                     primarily
                     work
@@ -24,22 +24,21 @@
                     I currently work for Accenture as a Full-Stack Engineer, primarily supporting the back-end of a
                     large-scale government project.
                 </p>
-                <p class=" text-accent text-xs font-bold">PHP • Javascript • Laravel • Livewire • Tailwind • C • Java •
-                    SQL • Unix • Git • Agile Methodologies</p>
+                <p class=" text-accent text-xs font-bold text-center">PHP • Laravel • Javascript • Vue JS • Tailwind CSS • C • Java • SQL • Unix • Git</p>
                 {{-- Primary and secondary buttons to view projects and to contact --}}
-                <div class="md:col-span-4 flex justify-center mt-4 md:justify-start">
+                <div class="md:col-span-4 flex justify-center mt-4 md:justify-center">
                     <a href="{{ route('projects.index') }}"
-                        class="bg-primary-button text-text px-4 py-2 rounded-md text-sm font-medium  cursor-pointer hover:scale-110">View
+                        class="bg-primary text-primary-content px-4 py-2 rounded-md text-sm font-medium  cursor-pointer hover:scale-110">View
                         Projects</a>
                     <a href="{{ route('contact.show') }}"
-                        class="bg-secondary-button text-text px-4 py-2 rounded-md text-sm font-medium ml-4  cursor-pointer hover:scale-110">Contact
+                        class="bg-secondary text-secondary-content px-4 py-2 rounded-md text-sm font-medium ml-4  cursor-pointer hover:scale-110">Contact
                         Me</a>
                 </div>
             </div>
 
 
 
-            <svg class="mx-auto w-3/4 my-auto hidden md:block" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"
+            {{--            <svg class="mx-auto w-3/4 my-auto hidden md:block" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"
                 viewBox="0 0 578 578" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <path
                     d="M889,450a287.86052,287.86052,0,0,1-68.09,186.34c-1.6,1.9-3.23,3.77-4.88995,5.63a290.58834,290.58834,0,0,1-67.49,55.99q-8.67,5.205-17.72,9.81c-.61.31-1.23.62-1.84.92-.73.37-1.47.73-2.21,1.09A286.15918,286.15918,0,0,1,679.24,728q-2.55.72-5.11,1.4a288.58782,288.58782,0,0,1-65.84,9.49c-1.16.03-2.3.05-3.4.07-.39.01-.77.02-1.15.02-1.25.01-2.49.02-3.74.02a289.27116,289.27116,0,0,1-69.54-8.43q-3.42-.84-6.81-1.77a285.47262,285.47262,0,0,1-34.97-12.03q-9-3.75-17.68-8.09c-1.31-.66-2.62-1.32-3.91-2-.55-.27-1.09-.56-1.63-.84a290.458,290.458,0,0,1-81.65-64.06c-1.6-1.79-3.17-3.61-4.72-5.44a289.02532,289.02532,0,0,1,49.59-419.1c1.64-1.21,3.29-2.41,4.96-3.58q.49494-.345.99-.69a286.75277,286.75277,0,0,1,97.1-43.85c1.98-.49,3.96-.95,5.96-1.38a291.79785,291.79785,0,0,1,114.68-2.01c1.99.37,3.98.75,5.96,1.16a287.28078,287.28078,0,0,1,97.1,39.43c.66.42,1.32.84,1.98,1.28,1.33.86,2.66,1.74,3.97,2.63A288.68578,288.68578,0,0,1,889,450Z"
@@ -198,7 +197,7 @@
                 <path
                     d="M454.33154,542.5a.48228.48228,0,0,1-.147-.02246.49976.49976,0,0,1-.33105-.625l4.61474-15a.50026.50026,0,0,1,.95606.29492l-4.61475,15A.50035.50035,0,0,1,454.33154,542.5Z"
                     transform="translate(-311 -161)" fill="#6c63ff" />
-            </svg>
+            </svg>--}}
         </div>
 
         {{-- TODO add linkedin and github pages --}}
@@ -215,7 +214,7 @@
             {{-- This page will only show 2 projects --}}
             <div class="flex flex-row justify-center mt-4">
                 <a href="{{ route('projects.index') }}"
-                    class="bg-primary-button text-text px-4 py-2 mt-4 mx-auto rounded-md text-sm font-medium  cursor-pointer hover:scale-110">View
+                    class="bg-primary text-primary-content px-4 py-2 mt-4 mx-auto rounded-md text-sm font-medium  cursor-pointer hover:scale-110">View
                     All Projects</a>
             </div>
         </div>
