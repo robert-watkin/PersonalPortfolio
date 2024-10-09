@@ -5,13 +5,12 @@
 @section('content')
 <div class="px-4">
     <section class="max-w-6xl mx-auto">
-        <div class="grid grid-cols-3 my-12 md:my-24">
-            <div class="col-span-3 mr-4">
-                <div class="flex flex-row justify-center space-x-4 mx-auto">
-                    <div class="my-4 md:my-4">
-                        <img src="{{ asset('images/profile.jpg') }}" alt="Profile Image" class="h-32 w-32 rounded-full">
+        <div class="my-12 md:my-24">
+                <div class="flex flex-col justify-center md:flex-row md:space-x-4 md:mx-auto">
+                    <div class="my-4">
+                        <img src="{{ asset('images/profile.jpg') }}" alt="Profile Image" class="h-32 w-32 mx-auto md:mx-none rounded-full">
                     </div>
-                    <h1 class="text-4xl my-auto font-bold text-text ">Robert Watkin<span
+                    <h1 class="text-center md:text-left text-4xl my-auto font-bold text-text ">Robert Watkin<span
                             class="text-accent text-2xl -mt-2"><br />Full-Stack Engineer</span></h1>
                 </div>
                 <p class="mt-4 text-sm text-text text-center md:w-[640px] mx-auto  mb-5">Hello! I'm Robert Watkin, a junior software engineer from the North
@@ -34,7 +33,6 @@
                         class="bg-secondary text-secondary-content px-4 py-2 rounded-md text-sm font-medium ml-4  cursor-pointer hover:scale-110">Contact
                         Me</a>
                 </div>
-            </div>
 
 
 
