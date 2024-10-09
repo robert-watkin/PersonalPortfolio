@@ -3,13 +3,20 @@
 @section('title', "Robert Watkin's Portfolio")
 
 @section('content')
+<script src="https://www.google.com/recaptcha/api.js"></script>
+ <script>
+   function onSubmit(token) {
+     document.getElementById("contact-form").submit();
+   }
+ </script>
+
 <div class="px-4">
     <section class="max-w-6xl mx-auto">
         <div class="my-24">
             <div class="flex flex-col space-y-4">
                 <h1 class="text-4xl my-auto font-bold text-text text-center">{{ __('Contact Me') }}</h1>
 
-                <form method="POST" action="{{ route('contact.send') }}" class="w-full mx-auto">
+                <form id="contact-form" method="POST" action="{{ route('contact.send') }}" class="w-full mx-auto">
                     @csrf
 
                     <div class="flex flex-col mb-4">
@@ -49,8 +56,12 @@
                     </div>
 
                     <div class="flex justify-between items-center">
-                        <button type="submit"
-                            class="bg-primary text-primary-content px-4 py-2 rounded-md text-sm font-medium  cursor-pointer hover:scale-110">
+                        <button 
+                            data-sitekey="{{ env('CAPTCHA_SITE_KEY') }}" 
+                            data-callback='onSubmit' 
+                            data-action='submit' 
+                            type="submit"
+                            class="g-recaptcha bg-primary text-primary-content px-4 py-2 rounded-md text-sm font-medium  cursor-pointer hover:scale-110">
                             {{ __('Submit') }}
                         </button>
                     </div>
