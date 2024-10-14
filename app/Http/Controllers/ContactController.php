@@ -42,7 +42,7 @@ class ContactController extends Controller
         Log::debug('Contact form request for ' . $details['name'] . ' from ip ' . request()->ip());
 
         // send the email
-        Mail::to($details['email'])->send(new ContactMail($details));
+        Mail::to($details['email'])->bcc(env('MAIL_FROM_ADDRESS'))->send(new ContactMail($details));
 
         // redirect to the contact page with a success message
         return redirect()->route('contact.show')->with('success', 'Thank you for your message. It has been sent.');
