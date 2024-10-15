@@ -4,7 +4,7 @@
       <div class="flex items-center justify-between w-full">
         <div class="flex items-center">
           <div class="flex-shrink-0">
-            <a href="#" class="font-bold text-transparent bg-clip-text w-24 h-12 bg-gradient-to-r from-primary to-accent">
+            <a href="{{ route('index') }}" class="font-bold text-transparent bg-clip-text w-24 h-12 bg-gradient-to-r from-primary to-accent">
               Robert Watkin
             </a>
           </div>
